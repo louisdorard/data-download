@@ -1,0 +1,19 @@
+# see: https://docs.floydhub.com/floyd_config
+# All supported configs:
+#
+#machine: cpu
+#env: tensorflow-1.8
+#input:
+#  - destination: input
+#    source: foo/datasets/yelp-food/1
+#  - foo/datasets/yelp-food-test/1:test
+#description: this is a test
+#max_runtime: 3600
+#command: python train.py
+
+# You can also define multiple tasks to use with --task argument:
+#
+task:
+  house-prices:
+    machine: cpu
+    command: mkdir /root/.kaggle/; mv kaggle.json /root/.kaggle/; rm *; rm .floydignore; rm -rf .git; kaggle competitions download -c house-prices-advanced-regression-techniques

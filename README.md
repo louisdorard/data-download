@@ -4,19 +4,13 @@
 
 2. For each competition you want to download data from, click on (Late) Submission and accept the rules.
 
-3. Create a `data-download` project, in team `humancoders`.
+3. Create a `data-download` project on Floyd, in team `humancoders`.
 
 4. Send command to Floyd to download data, via CLI:
 
     ```bash
     floyd init humancoders/data-download
-    floyd run 'mv kaggle.json ~/.kaggle/; rm -f floyd_requirements.txt; rm -f README.md; kaggle competitions download -c avazu-ctr-prediction; gunzip *.gz' # should sync up kaggle.json file, move it to .kaggle, start download
+    floyd run --task house-prices
     ```
 
-5. Add the job's output data to a new Floyd dataset
-
-    ```bash
-    floyd data add JOB_ID
-    ```
-
-    (More info on [floyd data add](https://docs.floydhub.com/commands/data/#floyd-data-add)).
+5. Add the job's output data to a Floyd dataset. This can be done from the Job's webpage or via [floyd data add](https://docs.floydhub.com/commands/data/#floyd-data-add)).
